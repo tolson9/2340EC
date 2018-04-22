@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Report Sighting</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <!-- Include Date Range Picker -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+        <!--js for this page-->
+        <script src="report.js"></script>
+
+    </head>
+
+    <body>
+        <div class='container'>
+            <div class='row'>
+                <div class="col-xs-hidden col-sm-2"></div>
+                <div class="col-xs-12 col-sm-8">
+                    <br>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">Date:</div>
+                        <div class="col-xs-12 col-sm-6">
+                            <form method="post">
+                            <div class="form-group" id="dateContainer"> <!-- Date input -->
+                                <input class="form-control" id="date" name="date" placeholder="YYYY/MM/DD" type="text"/>
+                              </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">Location Type:</div>
+                        <div class="col-xs-12 col-sm-6" id="locType">
+                            <input type="text" class="form-control" id="usr">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">Address:</div>
+                        <div class="col-xs-12 col-sm-6" id="address">
+                            <input type="text" class="form-control" id="usr">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">City:</div>
+                        <div class="col-xs-12 col-sm-6" id="city">
+                            <input type="text" class="form-control" id="usr">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">Borough:</div>
+                        <div class="col-xs-12 col-sm-6" id="borough">
+                            <input type="text" class="form-control" id="usr">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">Zip:</div>
+                        <div class="col-xs-12 col-sm-6" id="zip">
+                            <input type="text" class="form-control" id="usr">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">Latitude:</div>
+                        <div class="col-xs-12 col-sm-6" id="lat">
+                            <input type="text" class="form-control" id="usr">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">Longitude:</div>
+                        <div class="col-xs-12 col-sm-6" id="long">
+                            <input type="text" class="form-control" id="usr">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row text-right">
+                        <button type="button" class="btn btn-info" id="submit">Add Report</button>
+                    </div>
+
+                </div>
+                <div class="col-xs-hidden col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="jumbotron hidden" id="hide">
+                    Successfully Added Report
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

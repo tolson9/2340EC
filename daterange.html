@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Search</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Include Date Range Picker -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+        <!--js for this page-->
+        <script src="dateRange.js"></script>
+
+    </head>
+
+    <body>
+        <div class='container'>
+            <div class='row'>
+                <div class="col-xs-hidden col-sm-2"></div>
+                <div class="col-xs-12 col-sm-8">
+                        <div class="row" id="datePicker">
+                            <form method="post" style="margin-bottom: 50px">
+                              <div class="form-group"> <!-- Date input -->
+                                <label class="control-label" for="startdate">Start Date</label>
+                                <input class="form-control" id="startdate" name="startdate" placeholder="YYYY/MM/DD" type="text"/>
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label" for="enddate">End Date</label>
+                                <input class="form-control" id="enddate" name="enddate" placeholder="YYYY/MM/DD" type="text"/>
+                              </div>
+                              <div class="form-group text-right"> <!-- Submit button -->
+                                <button class="btn btn-primary " name="submit" type="button" id="chart">Chart</button>
+                                <button class="btn btn-primary " name="submit" type="button" id="map">Map</button>
+                              </div>
+                             </form>
+
+                            <script>
+                                $(document).ready(function(){
+                                  var date_input=$('input[name="startdate"]'); //our date input has the name "date"
+                                  var container=$('#datePicker form').length>0 ? $('#datePicker form').parent() : "body";
+                                  var options={
+                                    format: 'yyyy/mm/dd',
+                                    container: container,
+                                    todayHighlight: true,
+                                    autoclose: true,
+                                  };
+                                  date_input.datepicker(options);
+                                });
+                                $(document).ready(function(){
+                                  var date_input=$('input[name="enddate"]'); //our date input has the name "date"
+                                  var container=$('#datePicker form').length>0 ? $('#datePicker form').parent() : "body";
+                                  var options={
+                                    format: 'yyyy/mm/dd',
+                                    container: container,
+                                    todayHighlight: true,
+                                    autoclose: true,
+                                  };
+                                  date_input.datepicker(options);
+                                });
+                            </script>
+                        </div>
+                </div>
+                <div class="col-xs-hidden col-sm-2"></div>
+            </div>
+        </div>
+    </body>
+</html>

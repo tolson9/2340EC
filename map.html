@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Home</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        
+
+    </head>
+
+    <body>
+        <div class='container'>
+            <div class='row'>
+                <div class="col-xs-hidden col-sm-2"></div>
+                <div class="col-xs-12 col-sm-8">
+                    <div class="row">
+                        <div id="map" style="width:100%;height:500px"></div>
+                        <script>
+                        function initMap() {
+                            var newYork = {lat: 40.7, lng: -74};
+                            var map = new google.maps.Map(document.getElementById('map'), {
+                              zoom: 10,
+                              center: newYork
+                            });
+
+                        
+                        $.urlParam = function(name){
+                            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                            return results[1] || 0;
+                        }
+                        $(function() {
+                            var start = decodeURIComponent($.urlParam("start"));
+                            var end = decodeURIComponent($.urlParam("end"));
+                            var url = "https://2xcxiwvvy8.execute-api.us-east-2.amazonaws.com/prod/getSightingsInRange";
+                            url += "?start=" + start;
+                            url += "&end=" + end;
+                            $.get(url, function(data) {
+                                if(data) {
+                                    for(var i = 0; i < data.length; i++) {
+                                        var sighting = {lat : data[i].latitude, lng: data[i].longitude};
+
+                                        var marker = new google.maps.Marker({
+                                              position: sighting,
+                                              map: map
+                                            });
+                                    }
+                                }
+                            });
+                        });
+                        }
+                        </script>
+                        <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS2Ux74sqWMhnLlNIy9tX4KmTgeVTU7L0&callback=initMap">
+                        </script>
+                    </div>
+                </div>
+                <div class="col-xs-hidden col-sm-2"></div>
+            </div>
+        </div>
+    </body>
+</html>

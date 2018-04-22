@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Sign Up</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!--js for this page-->
+        <script src="signup.js"></script>
+
+    </head>
+
+    <body>
+        <div class='container'>
+            <div class='row'>
+                <div class="col-xs-hidden col-sm-2"></div>
+                <div class="col-xs-12 col-sm-8">
+                    <div class="row">
+                        <div class="form-group">
+                          <label for="usr">Email:</label>
+                          <input type="text" class="form-control" id="usr">
+                        </div>
+                        <div class="form-group">
+                          <label for="pwd">Password:</label>
+                          <input type="password" class="form-control" id="pwd">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 text-left">
+                            <a class="btn btn-info" style="color:white" href="index.html">Back</a>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <button type="button" class="btn btn-info" id="signupBtn">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-hidden col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="jumbotron hidden" id="alertWindow">
+                    User already exist
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
